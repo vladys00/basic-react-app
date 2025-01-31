@@ -5,6 +5,8 @@ import Users from './screens/users/users'
 import UsersCreate from './screens/users-create/users-create'
 import UsersDetail from './screens/users-detail/users-detail'
 import UsersEdit from './screens/users-edit/users-edit'
+import Login from './screens/login/login'
+import Profile from './screens/profile/profile'
 
 function App() {
 
@@ -31,6 +33,14 @@ function App() {
         <Route
           path="/users/edit/:id"
           element={<UsersEdit />}
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+        <Route
+          path="/profile"
+          element={<Profile />}
         />
       </Routes>
     </>

@@ -36,7 +36,7 @@ const UsersCreate = ({ user, isEditing }) => {
 
     createUser(userData)
       .then(() => {
-        navigate('/users');
+        navigate('/login');
       })
       .catch((error) => {
         console.error(error);
@@ -54,6 +54,11 @@ const UsersCreate = ({ user, isEditing }) => {
           <label htmlFor="email" className="form-label">Email</label>
           <input value={userData.email} onChange={handleChange} type="text" className="form-control" id="email" name="email" />
         </div>
+        {!isEditing && (
+          <div className="col-md-6">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input value={userData.password} onChange={handleChange} type="password" className="form-control" id="password" name="password" />
+          </div>)}
         <div className="col-12">
           <button type="submit" className="btn btn-primary">{isEditing ? 'Edit' : 'Create user'}</button>
         </div>
