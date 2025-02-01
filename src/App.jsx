@@ -7,42 +7,72 @@ import UsersDetail from './screens/users-detail/users-detail'
 import UsersEdit from './screens/users-edit/users-edit'
 import Login from './screens/login/login'
 import Profile from './screens/profile/profile'
+import Footer from './components/Footer/Footer'
+import ProtectedRoute from './components/ProtectedRoute'
+import PostCreate from './screens/posts-create/PostCreate'
+import Feed from './screens/feed/feed'
 
 function App() {
 
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/users"
-          element={<Users />}
-        />
-        <Route
-          path="/users/create"
-          element={<UsersCreate />}
-        />
-        <Route
-          path="/users/:id"
-          element={<UsersDetail />}
-        />
-        <Route
-          path="/users/edit/:id"
-          element={<UsersEdit />}
-        />
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-        <Route
-          path="/profile"
-          element={<Profile />}
-        />
-      </Routes>
+
+      <div style={{ minHeight: "100vh" }}>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/users"
+            element={<Users />}
+          />
+          <Route
+            path="/users/create"
+            element={<UsersCreate />}
+          />
+          <Route
+            path="/users/:id"
+            element={<UsersDetail />}
+          />
+          <Route
+            path="/users/edit/:id"
+            element={<UsersEdit />}
+          />
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+
+          <Route
+            path="/feed"
+            element={
+              <ProtectedRoute>
+                <Feed />
+              </ProtectedRoute>}
+          />
+
+          <Route
+            path="/posts/create"
+            element={
+              <ProtectedRoute>
+                <PostCreate />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
+      <Footer />
     </>
   )
 }

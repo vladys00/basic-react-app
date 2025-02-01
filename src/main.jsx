@@ -6,6 +6,8 @@ import App from './App.jsx'
 import ThemeProvider from './contexts/ThemeContext.jsx'
 import AuthContextProvider from './contexts/AuthContext.jsx'
 
+import './index.css'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

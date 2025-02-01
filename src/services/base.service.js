@@ -27,7 +27,7 @@ export const createHttp = (useAccesstToken = false) => {
         }
       }
 
-      return Promise.reject(error);
+      return Promise.reject(error.response.data);
     }
   );
   return http;
