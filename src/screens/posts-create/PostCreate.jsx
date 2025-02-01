@@ -8,7 +8,7 @@ const PostCreate = () => {
     caption: ''
   });
 
-  const { navigate } = useNavigate();
+  const navigate  = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;

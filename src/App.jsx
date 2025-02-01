@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 import ProtectedRoute from './components/ProtectedRoute'
 import PostCreate from './screens/posts-create/PostCreate'
 import Feed from './screens/feed/feed'
+import Gallery from './screens/gallery/gallery'
 
 function App() {
 
@@ -67,6 +68,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/gallery"
+            element={
+              <ProtectedRoute>
+                <Gallery />
               </ProtectedRoute>
             }
           />
