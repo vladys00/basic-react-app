@@ -12,6 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 import PostCreate from './screens/posts-create/PostCreate'
 import Feed from './screens/feed/feed'
 import Gallery from './screens/gallery/gallery'
+import PostDetail from './screens/post-detail/PostDetail'
 
 function App() {
 
@@ -79,6 +80,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/posts/:id"
+            element={
+              <ProtectedRoute>
+                <PostDetail/>
+              </ProtectedRoute>
+            }
+          />
+          
         </Routes>
       </div>
       <Footer />

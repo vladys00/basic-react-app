@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { likePost } from '../../services/like.service';
+import { Link } from 'react-router-dom';
 
 const Post = ({ imageUrl, caption, user, postId, isLiked, likesCount }) => {
   const [liked, setLiked] = useState(isLiked);
@@ -32,6 +33,9 @@ const Post = ({ imageUrl, caption, user, postId, isLiked, likesCount }) => {
         <button className="btn btn-light" onClick={submitLike}>
           <i className={`bi ${liked ? 'bi-heart-fill' : 'bi-heart'}`}></i><small className="ms-1">{likesAmount}</small>
         </button>
+        <Link to={`/posts/${postId}`}>
+            <button className=" btn btn-primary">Details</button>
+                </Link>
       </div>
     </div>
   );
